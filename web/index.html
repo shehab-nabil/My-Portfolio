@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shehab Nabil Mokhtar · Senior Flutter Developer</title>
+  <meta name="description" content="Portfolio of Shehab Nabil Mokhtar, a Senior Flutter Developer in Cairo, Egypt, building production apps for Android, iOS, Web and Desktop.">
+  <meta name="theme-color" content="#F5F5F2">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shehab Nabil Mokhtar · Senior Flutter Developer">
+  <meta property="og:description" content="Flutter apps that ship to production, and stay there.">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Shehab Nabil">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin: 0; background: #F5F5F2; }
+    #splash {
+      position: fixed; inset: 0; z-index: 10;
+      display: flex; align-items: center; justify-content: center;
+      background: #F5F5F2; transition: opacity .25s ease;
+    }
+    #splash span {
+      display: flex; align-items: center; justify-content: center;
+      width: 72px; height: 72px; border-radius: 18px;
+      background: #0F1215; color: #FFFFFF;
+      font: 600 28px/1 "Space Grotesk", system-ui, sans-serif;
+      letter-spacing: -0.02em; animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse { 50% { opacity: .55; } }
+    @media (prefers-reduced-motion: reduce) {
+      #splash, #splash span { animation: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="splash" role="status" aria-label="Loading"><span>SH</span></div>
+  <noscript>
+    <p style="position:relative;z-index:11;padding:24px;font-family:system-ui">
+      This portfolio needs JavaScript.
+    </p>
+  </noscript>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var splash = document.getElementById('splash');
+      if (!splash) return;
+      splash.style.opacity = '0';
+      splash.style.pointerEvents = 'none';
+      setTimeout(function () { splash.remove(); }, 300);
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

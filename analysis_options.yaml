@@ -1,0 +1,23 @@
+# Run `flutter analyze` before committing.
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+  exclude:
+    - build/**
+    - web/**
+
+linter:
+  rules:
+    always_declare_return_types: true
+    # The layer tests match package: URIs, so relative imports must not exist.
+    always_use_package_imports: true
+    directives_ordering: true
+    prefer_final_in_for_each: true
+    prefer_final_locals: true
+    prefer_single_quotes: true
+    require_trailing_commas: false
+    unawaited_futures: true
