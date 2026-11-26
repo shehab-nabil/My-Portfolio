@@ -76,14 +76,16 @@ The PDF is public once deployed, including the phone number and email in it.
 
 1. Push this project to a GitHub repository, on the `main` branch.
 2. In the repository, open **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
-3. Every push to `main` now runs `.github/workflows/deploy.yml`, which analyzes, builds and deploys.
+3. Every push to `main` now runs `.github/workflows/deploy.yml`, which analyzes, tests, builds and deploys.
+
+Pull requests run `.github/workflows/ci.yml`: formatting, analyze, tests and a release build, without deploying.
 
 The workflow derives `--base-href` from the repository name (`/` for a `<user>.github.io` repository).
 
 ### Manual build
 
 ```bash
-flutter build web --release --base-href /<repo>/
+flutter build web --release --base-href /<repo>/   # e.g. /My-Portfolio/
 cp build/web/index.html build/web/404.html
 ```
 
